@@ -1,0 +1,5 @@
+#deb https://enterprise.proxmox.com/debian/pve buster pve-enterprise
+
+# PVE pve-no-subscription repository provided by proxmox.com,
+# NOT recommended for production use
+#deb http://download.proxmox.com/debian/pve buster pve-no-subscription
