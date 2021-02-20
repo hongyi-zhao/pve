@@ -24,11 +24,25 @@ iface enp5s0 inet manual
 
 iface enp6s0 inet manual
 
-auto vmbr0
-iface vmbr0 inet static
-        address 192.168.10.254/24
-        gateway 192.168.10.1
-	bridge-ports enp5s0
-	bridge-stp off
-	bridge-fd 0
+#auto vmbr0
+#iface vmbr0 inet static
+#        address 192.168.10.254/24
+#        gateway 192.168.10.1
+#	bridge-ports enp5s0
+#	bridge-stp off
+#	bridge-fd 0
 
+
+auto vmbr0
+iface vmbr0 inet manual
+        ovs_type OVSBridge
+        ovs_ports vlan10
+
+allow-vmbr0 vlan10
+iface vlan10 inet static
+        address  192.168.10.254
+        netmask  255.255.255.0
+        gateway  192.168.10.1
+        ovs_type OVSIntPort
+        ovs_bridge vmbr0
+        ovs_options tag=10
