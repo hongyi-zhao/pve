@@ -1,6 +1,6 @@
 127.0.0.1 localhost.localdomain localhost
 #https://pve.proxmox.com/wiki/Renaming_a_PVE_node
-192.168.10.254 pve1.pve.lan pve1
+192.168.10.254 pve.lan pve
 
 # The following lines are desirable for IPv6 capable hosts
 
