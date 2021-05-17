@@ -14,13 +14,15 @@ iface lo inet loopback
 
 auto enp1s0
 iface enp1s0 inet manual
-#	ovs_type OVSPort
-#	ovs_bridge vmbr0
+#For ovs bridge
+	ovs_type OVSPort
+	ovs_bridge vmbr0
 
 auto enp2s0
 iface enp2s0 inet manual
-#	ovs_type OVSPort
-#	ovs_bridge vmbr1
+#For ovs bridge
+	ovs_type OVSPort
+	ovs_bridge vmbr1
 
 iface enp3s0 inet manual
 iface enp4s0 inet manual
@@ -31,17 +33,21 @@ auto vmbr0
 iface vmbr0 inet static
 	address 192.168.10.254/24
 	gateway 192.168.10.1
-        bridge-ports enp1s0
-        bridge-stp off
-        bridge-fd 0
-#	ovs_type OVSBridge
-#	ovs_ports enp1s0
+#For linux bridge
+#        bridge-ports enp1s0
+#        bridge-stp off
+#        bridge-fd 0
+#For ovs bridge
+	ovs_type OVSBridge
+	ovs_ports enp1s0
 
 auto vmbr1
 iface vmbr1 inet manual
-        bridge-ports enp2s0
-        bridge-stp off
-        bridge-fd 0
-#	ovs_type OVSBridge
-#	ovs_ports enp2s0
+#For linux bridge
+#        bridge-ports enp2s0
+#        bridge-stp off
+#        bridge-fd 0
+#For ovs bridge
+	ovs_type OVSBridge
+	ovs_ports enp2s0
 
